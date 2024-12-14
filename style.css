@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Agustina Regular";
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* background-color: #fff; */
+  background: linear-gradient(rgba(224, 223, 223, 0.5), rgb(197, 202, 235));
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+ padding: 20px 120px;
+  background-color: #9192ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  text-decoration: none;
+ 
+  font-size: 30px;
+  font-family: "Playwrite HR Lijeva", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: white;
+}
+
+.navbar a {
+  text-decoration: none;
+  margin-left: 40px;
+  font-size: 20px;
+  color: white;
+  font-family: "Playwrite HR Lijeva", cursive;
+  
+}
+
+/* -------------------------home-------------------------------- */
+
+#home {
+  display: flex;
+  margin-top: 100px;
+
+
+}
+
+.home-left-section {
+  width: 50vw;
+}
+
+.home-left-section h1 {
+  margin-top: 40px;
+  margin-left: 40px;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: Montserrat, "Montserrat", sans-serif;
+  
+}
+
+.home-left-section,
+h3,
+p {
+  margin-top: 30px;
+  margin-left: 40px;
+  font-family: Montserrat, "Montserrat", sans-serif;
+  ;
+}
+
+.home-left-section p {
+  font-size: 23px;
+  color: #868e96;
+  line-height: 40px;
+
+}
+
+.home-left-section .icon {
+  margin-top: 30px;
+  margin-left: 30px;
+  padding: 10px;
+}
+
+.home-right-section {
+  margin: 55px auto;
+}
+
+/* -------------------------project-------------------------------- */
+#project-section {
+  width: 100%;
+  height: auto;
+  text-align: center;
+
+
+}
+
+#project-section h2 {
+  font-size: 50px;
+  font-family: "Playwrite HR Lijeva", cursive;
+  padding: 20px;
+}
+
+.project-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  align-items: center;
+  gap: 2rem;
+  margin-top: 5rem;
+  margin-left: 40px;
+  padding: 30px;
+
+}
+
+.row {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.row img {
+  width: 100%;
+  border-radius: 1px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.layer {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgb(120, 135, 219));
+  position: absolute;
+  border-radius: 8px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: height 0.5s;
+}
+
+.row:hover {
+  box-shadow: #304b66;
+}
+
+.row:hover img {
+  transform: scale(1.1);
+}
+
+.row:hover .layer {
+  height: 100%;
+}
+
+/* -------------------------skilss-------------------------------- */
+#skills-section {
+  width: 100%;
+  height: auto;
+}
+#skills-section h2{
+  text-align: center;
+  font-family: "Playwrite HR Lijeva", cursive;
+  font-size: 50px;
+  padding: 20px;
+}
+.skills-contant{
+  display: flex;
+}
+.skills-section-left {
+  width: 50%;
+}
+
+.skills-section-right {
+  width: 50%;
+}
+
+
+
+
+.skills-bar {
+  font-size: 23px;
+
+
+}
+
+.skills-bar {
+  margin: 30px 0;
+}
+
+.skills-bar .info {
+  margin-bottom: 5px;
+}
+
+.skills-bar .info span {
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+
+.skills-bar .progress-line {
+  position: relative;
+  border-radius: 10px;
+  width: 90%;
+  height: 15px;
+  background-color: #000;
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.skills-bar .progress-line span {
+  height: 100%;
+  background-color:#9192ff;
+  position: absolute;
+  border-radius: 10px;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.progress-line.html span {
+  width: 90%;
+}
+
+.progress-line.css span {
+  width: 80%;
+}
+
+.progress-line.javascript span {
+  width: 50%;
+}
+
+
+.progress-line span::after {
+  position: absolute;
+  padding: 1px 8px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  top: -28px;
+  right: -20px;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+
+.progress-line.html span::after {
+  content: "90%";
+}
+
+.progress-line.css span::after {
+  content: "80%";
+}
+
+.progress-line.javascript span::after {
+  content: "50%";
+}
+
+.progress-line span::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  top: -10px;
+  right: 0;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* -------------------------contact-------------------------------- */
+.contact-us {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-us h1 {
+  font-size: 50px;
+  font-family: "Playwrite HR Lijeva", cursive;
+  padding: 20px;
+
+}
+
+.contact-us p ,a {
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-family: Montserrat, "Montserrat", sans-serif;
+  padding: 10px;
+
+}
+.contact-us a{
+  margin: 30px;
+}
+
+
+/* -------------------------contact end-------------------------------- */
+
+/* @media screen  and (max-width: 1112px) {
+  .navbar a{
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #3d0c74;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 80;
+    width: 10%;
+  }
+
+  
+  
+} */
+
+@media screen and (max-width: 1112px) {
+
+  .home-right-section {
+    display: none;
+  }
+
+  .home-left-section {
+    width: 100vw;
+  }
+
+}
+@media screen and (max-width: 900px) {
+
+  .skills-contant{
+    flex-direction: column;
+  }
+  .skills-section-left{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .skills-section-right{
+    width: 100%;
+   
+    padding: 30px;
+  }
+
+}
